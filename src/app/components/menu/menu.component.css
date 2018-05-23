@@ -1,0 +1,23 @@
+.container {
+  display: flex;
+  flex-direction: row;
+  height: 10vh;
+  background-color: #00c9d6;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  padding: 0;
+}
+.menu {
+  display: flex;
+  width: 100%;
+  flex-direction: row;
+  justify-content: flex-end;
+}
+ul {
+  margin: 0;
+}
+.menu > li {
+  width: 5em;
+  list-style-type: none;
+}
