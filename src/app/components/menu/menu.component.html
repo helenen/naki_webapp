@@ -1,7 +1,32 @@
 <div class="container">
-  <ul class="menu row">
+  <nav class="navbar navbar-light bg-lignt">
+    <button class="navbar-toggler ml-auto" type="button" data-toggle="collapse" data-target="#collapsingNavbar2" (click)="isCollapsed = !isCollapsed">
+      <span class="navbar-toggler-icon my-toggler"></span>
+    </button>
+    <div class="navbar-collapse collapse" [ngbCollapse]="isCollapsed" id="collapsingNavbar2">
+      <ul class="navbar-nav mx-auto">
+        <li routerLink="/" class="nav-item active">
+          <a class="nav-link">Accueil</a>
+        </li>
+        <li routerLink="/parcours" class="nav-item">
+          <a class="nav-link">Parcours</a>
+        </li>
+        <li routerLink="/contact" class="nav-item">
+          <a class="nav-link">Contact</a>
+        </li>
+      </ul>
+    </div>
+  </nav>
+
+
+
+
+
+  <!-- <ul class="menu row">
     <li routerLink="/level" class="menu_elements">Accueil</li>
     <li class="menu_elements">Parcours</li>
     <li routerLink="/contact" class="menu_elements">Contact</li>
-  </ul>
+  </ul> -->
+
+
 </div>
