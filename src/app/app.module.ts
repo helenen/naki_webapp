@@ -8,11 +8,15 @@ import { LevelComponent } from "./components/level/level.component";
 import { MenuComponent } from "./components/menu/menu.component";
 import { ContactComponent } from "./components/contact/contact.component";
 import { ParcoursComponent } from "./components/parcours/parcours.component";
+import { TopicComponent } from "./components/topic/topic.component";
+import { LessonComponent } from "./components/lesson/lesson.component";
 
 const Routes: Route[] = [
   { path: "", component: LevelComponent },
   { path: "parcours", component: ParcoursComponent },
-  { path: "contact", component: ContactComponent }
+  { path: "contact", component: ContactComponent },
+  { path: "topics", component: TopicComponent },
+  { path: "lessons", component: LessonComponent }
 ];
 @NgModule({
   declarations: [
@@ -20,7 +24,9 @@ const Routes: Route[] = [
     LevelComponent,
     MenuComponent,
     ContactComponent,
-    ParcoursComponent
+    ParcoursComponent,
+    TopicComponent,
+    LessonComponent
   ],
   imports: [BrowserModule, RouterModule.forRoot(Routes), NgbModule.forRoot()],
   providers: [],

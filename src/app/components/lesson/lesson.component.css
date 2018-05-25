@@ -1,0 +1,14 @@
+.container {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  margin-top: 10%;
+}
+.lesson_item {
+  height: 7vh;
+  width: 15em;
+  background-color: #ffb168;
+  border-radius: 10px;
+  margin-bottom: 10px;
+}
