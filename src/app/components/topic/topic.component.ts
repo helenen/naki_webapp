@@ -1,4 +1,8 @@
+import { TopicService } from './topic.service';
 import { Component, OnInit } from '@angular/core';
+import {Http, Response} from '@angular/http';
+import 'rxjs/add/operator/map';
+
 
 @Component({
   selector: 'app-topic',
@@ -6,10 +10,16 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./topic.component.css']
 })
 export class TopicComponent implements OnInit {
+private apiUrl = 'http://localhost:8080/lessons';
+data: any = {};
 
-  constructor() { }
-
-  ngOnInit() {
+  constructor(private topicService: TopicService) {
+    this.topicService.getLessons()
+      .subscribe(data => {
+        console.log(data);
+      });
+    }
+    ngOnInit() {
+    }
   }
 
-}
