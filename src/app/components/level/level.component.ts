@@ -10,4 +10,5 @@ export class LevelComponent implements OnInit {
   constructor(private router: Router) {}
 
   ngOnInit() {}
+
 }
