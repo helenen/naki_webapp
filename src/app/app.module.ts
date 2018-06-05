@@ -1,3 +1,4 @@
+import { ParcoursService } from './components/parcours/parcours.service';
 import { LevelService } from './components/level/level.service';
 import { TopicService } from './components/topic/topic.service';
 import { BrowserModule } from '@angular/platform-browser';
@@ -17,7 +18,7 @@ import { LessonComponent } from './components/lesson/lesson.component';
 
 const Routes: Route[] = [
   { path: '', component: LevelComponent },
-  { path: 'parcours', component: ParcoursComponent },
+  { path: 'cours', component: ParcoursComponent },
   { path: 'contact', component: ContactComponent },
   { path: 'topics', component: TopicComponent },
   { path: 'lessons', component: LessonComponent }
@@ -33,7 +34,7 @@ const Routes: Route[] = [
     LessonComponent
   ],
   imports: [BrowserModule, HttpClientModule, RouterModule.forRoot(Routes), NgbModule.forRoot(), HttpModule],
-  providers: [TopicService, LevelService ],
+  providers: [TopicService, LevelService, ParcoursService ],
   bootstrap: [AppComponent]
 })
 export class AppModule {}
