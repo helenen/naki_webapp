@@ -8,16 +8,6 @@ import "rxjs/add/operator/map";
   styleUrls: ["./topic.component.css"]
 })
 export class TopicComponent implements OnInit {
-  constructor(private topicService: TopicService) {
-    this.topicService.getLessons().subscribe(data => {
-      console.log(data);
-    });
-    this.topicService.getCours().subscribe(data => {
-      console.log(data);
-    });
-    this.topicService.getExercises().subscribe(data => {
-      console.log(data);
-    });
-  }
+  constructor() {}
   ngOnInit() {}
 }

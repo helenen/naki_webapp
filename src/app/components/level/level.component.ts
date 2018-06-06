@@ -1,5 +1,5 @@
 import { Component, OnInit } from "@angular/core";
-import { Router } from "@angular/router";
+import { LevelService } from "./level.service";
 
 @Component({
   selector: "app-level",
@@ -7,8 +7,20 @@ import { Router } from "@angular/router";
   styleUrls: ["./level.component.css"]
 })
 export class LevelComponent implements OnInit {
-  constructor(private router: Router) {}
+  constructor(private levelService: LevelService) {
+    this.levelService.getLessons().subscribe(data => {
+      console.log(data);
+    });
+    this.levelService.getCours().subscribe(data => {
+      console.log(data);
+    });
+    this.levelService.getExercises().subscribe(data => {
+      console.log(data);
+    });
+    this.levelService.getSubThemes().subscribe(data => {
+      console.log(data);
+    });
+  }
 
   ngOnInit() {}
-
 }
