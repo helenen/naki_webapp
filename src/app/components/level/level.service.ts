@@ -1,7 +1,31 @@
-import { Injectable } from '@angular/core';
-import { HttpClient } from '@angular/common/http';
+import { Injectable } from "@angular/core";
+import { Http, Response } from "@angular/http";
+import { environment } from "../../../environments/environment";
+import "rxjs/add/operator/map";
 
 @Injectable()
 export class LevelService {
-  constructor(private http: HttpClient) { }
+  private apiUrl = environment.api_Url;
+  constructor(private http: Http) {}
+
+  getLessons() {
+    return this.http
+      .get(this.apiUrl + "/lessons")
+      .map((res: Response) => res.json());
+  }
+  getCours() {
+    return this.http
+      .get(this.apiUrl + "/cours")
+      .map((res: Response) => res.json());
+  }
+  getExercises() {
+    return this.http
+      .get(this.apiUrl + "/exercises")
+      .map((res: Response) => res.json());
+  }
+  getSubThemes() {
+    return this.http
+      .get(this.apiUrl + "/subThemes")
+      .map((res: Response) => res.json());
+  }
 }
