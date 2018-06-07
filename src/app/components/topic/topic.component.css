@@ -1,0 +1,14 @@
+.container {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  margin-top: 10%;
+}
+.topic_items {
+  height: 15vh;
+  width: 10em;
+  background-color: #ffb168;
+  border-radius: 10px;
+  margin-bottom: 10px;
+}
