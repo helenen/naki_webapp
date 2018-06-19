@@ -14,9 +14,6 @@ export class LevelComponent implements OnInit {
     this.levelService.getExercises().subscribe(data => {
       console.log(data);
     });
-    this.levelService.getchapters().subscribe(data => {
-      console.log(data);
-    });
   }
 
   ngOnInit() {}
