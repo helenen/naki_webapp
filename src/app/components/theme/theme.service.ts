@@ -4,6 +4,6 @@ import "rxjs/add/operator/map";
 import { environment } from "../../../environments/environment";
 
 @Injectable()
-export class TopicService {
+export class ThemeService {
   constructor(private http: Http) {}
 }
