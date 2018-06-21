@@ -8,7 +8,7 @@ import { LevelService } from "./level.service";
 })
 export class LevelComponent implements OnInit {
   constructor(private levelService: LevelService) {
-    this.levelService.getCours().subscribe(data => {
+    this.levelService.getLessons().subscribe(data => {
       console.log(data);
     });
     this.levelService.getExercises().subscribe(data => {

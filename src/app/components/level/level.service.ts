@@ -8,9 +8,9 @@ export class LevelService {
   private apiUrl = environment.api_Url;
   constructor(private http: Http) {}
 
-  getCours() {
+  getLessons() {
     return this.http
-      .get(this.apiUrl + "/cours")
+      .get(this.apiUrl + "/lessons")
       .map((res: Response) => res.json());
   }
   getExercises() {
