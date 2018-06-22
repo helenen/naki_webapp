@@ -10,12 +10,12 @@ import { LessonService } from "./lesson.service";
   providers: [ Chapter ]
 })
 export class LessonComponent implements OnInit {
-  chapter: Chapter[];
+  chapters: Chapter[];
 
   constructor(private lessonService: LessonService, private levelPipe: LevelPipe) { 
-    this.lessonService.getchapters().subscribe(chapter => {
-    console.log(chapter);
-  });}
+    this.lessonService.getchapters().subscribe((data: Chapter[]) => {
+      this.chapters = data;
+    });}
 
   ngOnInit() {
   }
