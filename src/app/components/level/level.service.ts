@@ -18,9 +18,9 @@ export class LevelService {
       .get(this.apiUrl + "/exercises")
       .map((res: Response) => res.json());
   }
-  getchapters() {
-    return this.http
-      .get(this.apiUrl + "/chapters")
-      .map((res: Response) => res.json());
-  }
+  // getchapters() {
+  //   return this.http
+  //     .get(this.apiUrl + "/chapters")
+  //     .map((res: Response) => res.json());
+  // }
 }

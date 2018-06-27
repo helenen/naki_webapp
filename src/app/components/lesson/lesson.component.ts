@@ -6,8 +6,7 @@ import { LessonService } from "./lesson.service";
 @Component({
   selector: "app-lesson",
   templateUrl: "./lesson.component.html",
-  styleUrls: ["./lesson.component.css"],
-  providers: [ Chapter ]
+  styleUrls: ["./lesson.component.css"]
 })
 export class LessonComponent implements OnInit {
   chapters: Chapter[];
@@ -15,7 +14,8 @@ export class LessonComponent implements OnInit {
   constructor(private lessonService: LessonService, private levelPipe: LevelPipe) { 
     this.lessonService.getchapters().subscribe((data: Chapter[]) => {
       this.chapters = data;
-    });}
+    });
+    console.log(this.chapters,'poi');}
 
   ngOnInit() {
   }

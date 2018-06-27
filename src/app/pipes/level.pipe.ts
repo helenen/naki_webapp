@@ -7,6 +7,10 @@ import { Chapter } from "./chapter";
 })
 export class LevelPipe implements PipeTransform {
   transform(items: Chapter[]): Chapter[] {
-    return items.filter(item => item.exemple);
+    if (!items) {
+      return items;
+    } else {
+      return items.filter(item => item.exemple);
+    }
   }
 }

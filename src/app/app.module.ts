@@ -40,7 +40,7 @@ const Routes: Route[] = [
     NgbModule.forRoot(),
     HttpModule
   ],
-  providers: [ThemeService, LevelService, ParcoursService, LessonService],
+  providers: [ThemeService, LevelService, ParcoursService, LessonService,LevelPipe],
   bootstrap: [AppComponent]
 })
 export class AppModule {}
