@@ -1,5 +1,5 @@
 import { Pipe, PipeTransform } from "@angular/core";
-import { Chapter } from "./chapter";
+import { Chapter } from "../models/chapter";
 
 @Pipe({
   name: "levelPipe",
