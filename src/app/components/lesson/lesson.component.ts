@@ -1,3 +1,4 @@
+import { Lesson } from './../../models/lesson';
 import { LevelPipe } from "./../../pipes/level.pipe";
 import { Chapter } from "./../../pipes/chapter";
 import { Component, OnInit } from "@angular/core";
@@ -10,14 +11,16 @@ import { LessonService } from "./lesson.service";
 })
 export class LessonComponent implements OnInit {
   chapters: Chapter[];
+  lessons: Lesson[];
 
-  constructor(private lessonService: LessonService, private levelPipe: LevelPipe) { 
+  constructor(private lessonService: LessonService, private levelPipe: LevelPipe) {}
+  ngOnInit() {
     this.lessonService.getchapters().subscribe((data: Chapter[]) => {
       this.chapters = data;
     });
-    console.log(this.chapters,'poi');}
-
-  ngOnInit() {
+    this.lessonService.getchapterByLesson().subscribe((data: Lesson[]) => {
+      this.lessons = data;
+    });
   }
 
 }
