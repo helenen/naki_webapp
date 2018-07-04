@@ -16,6 +16,8 @@ import { ParcoursComponent } from "./components/parcours/parcours.component";
 import { ThemeComponent } from "./components/theme/theme.component";
 import { LessonComponent } from "./components/lesson/lesson.component";
 import { LevelPipe } from "./pipes/level.pipe";
+import {GenerateURLService} from "./general_service/generateUrl.service";
+import { LessonDetailsComponent } from "./components/lesson-details/lesson-details.component";
 
 const Routes: Route[] = [
   { path: "", component: LevelComponent },
@@ -31,7 +33,8 @@ const Routes: Route[] = [
     ParcoursComponent,
     ThemeComponent,
     LessonComponent,
-    LevelPipe
+    LevelPipe,
+    LessonDetailsComponent
   ],
   imports: [
     BrowserModule,
@@ -40,7 +43,7 @@ const Routes: Route[] = [
     NgbModule.forRoot(),
     HttpModule
   ],
-  providers: [ThemeService, LevelService, ParcoursService, LessonService,LevelPipe],
+  providers: [ThemeService, LevelService, ParcoursService, LessonService,LevelPipe, GenerateURLService],
   bootstrap: [AppComponent]
 })
 export class AppModule {}
