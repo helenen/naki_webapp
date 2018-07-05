@@ -1,20 +1,7 @@
-<div class="container">
-  <nav class="navbar navbar-light bg-lignt">
-    <button class="navbar-toggler ml-auto" type="button" data-toggle="collapse" data-target="#collapsingNavbar" (click)="isCollapsed = !isCollapsed">
-      <span class="navbar-toggler-icon my-toggler"></span>
-    </button>
-    <div class="navbar-collapse collapse" [ngbCollapse]="isCollapsed" id="collapsingNavbar">
-      <ul class="navbar-nav mx-auto">
-        <li routerLink="/" class="nav-item active">
-          <a (click)="isCollapsed = !isCollapsed" class="nav-link">Accueil</a>
-        </li>
-        <li routerLink="/themes" class="nav-item">
-          <a (click)="isCollapsed = !isCollapsed" class="nav-link">themes</a>
-        </li>
-        <li routerLink="/contact" class="nav-item">
-          <a (click)="isCollapsed = !isCollapsed" class="nav-link">Contact</a>
-        </li>
-      </ul>
-    </div>
-  </nav>
-</div>
+<button mat-button [matMenuTriggerFor]="menu">
+  <div class="button-menu"></div>
+</button>
+<mat-menu #menu="matMenu">
+  <button mat-menu-item>Itfefem 1</button>
+  <button mat-menu-item>Item 2</button>
+</mat-menu>
