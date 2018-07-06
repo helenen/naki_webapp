@@ -1,7 +1,5 @@
 <div class="container">
   <ul>
-    <li *ngFor="let items of chapters| levelPipe: chapters">{{chapter.title}}</li>
+    <li *ngFor="let chapter of lessons">{{chapter.title}}</li>
   </ul>
-  <button class="lesson_item">oh</button>
-  <button class="lesson_item">puff</button>
 </div>
