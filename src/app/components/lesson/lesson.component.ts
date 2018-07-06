@@ -1,6 +1,8 @@
 import { Lesson } from "./../../models/lesson";
 //import { LevelPipe } from "./../../pipes/level.pipe";
 import { Chapter } from "./../../pipes/chapter";
+import { LevelPipe } from "./../../pipes/level.pipe";
+import { Chapter } from "../../models/chapter";
 import { Component, OnInit } from "@angular/core";
 import { LessonService } from "./lesson.service";
 
@@ -20,7 +22,6 @@ constructor(private lessonService: LessonService, /*private levelPipe: LevelPipe
     });
     this.lessonService.getchapterByLesson(1).subscribe((data: Lesson[]) => {
       this.lessons = data;
-    });
-  }
+    )};
+   }                                               
 
-}
