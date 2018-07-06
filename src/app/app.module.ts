@@ -16,6 +16,12 @@ import { ParcoursComponent } from "./components/parcours/parcours.component";
 import { ThemeComponent } from "./components/theme/theme.component";
 import { LessonComponent } from "./components/lesson/lesson.component";
 import { LevelPipe } from "./pipes/level.pipe";
+import {GenerateURLService} from "./general_service/generateUrl.service";
+import { LessonDetailsComponent } from "./components/lesson-details/lesson-details.component";
+import { MaterialModule } from "./material/material.module";
+import { LayoutModule } from '@angular/cdk/layout';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+
 
 const Routes: Route[] = [
   { path: "", component: LevelComponent },
@@ -31,16 +37,20 @@ const Routes: Route[] = [
     ParcoursComponent,
     ThemeComponent,
     LessonComponent,
-    LevelPipe
+    LevelPipe,
+    LessonDetailsComponent
   ],
   imports: [
     BrowserModule,
     HttpClientModule,
     RouterModule.forRoot(Routes),
     NgbModule.forRoot(),
-    HttpModule
+    HttpModule,
+    MaterialModule,
+    LayoutModule,
+    BrowserAnimationsModule
   ],
-  providers: [ThemeService, LevelService, ParcoursService, LessonService,LevelPipe],
+  providers: [ThemeService, LevelService, ParcoursService, LessonService, LevelPipe, GenerateURLService],
   bootstrap: [AppComponent]
 })
 export class AppModule {}
