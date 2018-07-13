@@ -1,8 +1,7 @@
-<button mat-button [matMenuTriggerFor]="menu">
-  <div class="button-menu"></div>
-</button>
-<mat-menu #menu="matMenu">
-  <button mat-menu-item>Accueil</button>
-  <button mat-menu-item>Niveaux</button>
-  <button mat-menu-item>Thèmes</button>
-</mat-menu>
+<mat-toolbar color="warn">
+  <mat-toolbar-row fxLayout="row" fxLayoutAlign="space-between end" fxLayoutAlign="space-between center" >
+    <mat-icon class='md-36'>home</mat-icon>
+    <mat-icon class='md-36'>trending_upse</mat-icon>
+    <mat-icon class='md-36'>list</mat-icon>
+  </mat-toolbar-row>
+</mat-toolbar>

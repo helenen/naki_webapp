@@ -19,6 +19,7 @@ import { LessonDetailsComponent } from "./components/lesson-details/lesson-detai
 import { MaterialModule } from "./material/material.module";
 import { LayoutModule } from "@angular/cdk/layout";
 import { BrowserAnimationsModule } from "@angular/platform-browser/animations";
+import { FlexLayoutModule } from "@angular/flex-layout";
 
 
 const Routes: Route[] = [
@@ -43,7 +44,8 @@ const Routes: Route[] = [
     HttpModule,
     MaterialModule,
     LayoutModule,
-    BrowserAnimationsModule
+    BrowserAnimationsModule,
+    FlexLayoutModule
   ],
   providers: [ThemeService, LevelService, LessonService, GenerateURLService],
   bootstrap: [AppComponent]

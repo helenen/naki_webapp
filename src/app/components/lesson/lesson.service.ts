@@ -5,7 +5,6 @@ import { environment } from "../../../environments/environment";
 import "rxjs/add/operator/map";
 
 import {Lesson} from "../../models/lesson";
-import {Observable} from "rxjs/Observable";
 import {GenerateURLService} from "../../general_service/generateUrl.service";
 
 import { Observable } from "rxjs";
