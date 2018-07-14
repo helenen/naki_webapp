@@ -1,33 +1,32 @@
-.navbar-toggler {
-  border-color: #21c9d5;
-  margin-right: 280px;
+@import '~@angular/material/prebuilt-themes/deeppurple-amber.css';
+.material-icons.md-14 {
+  font-size: 14px;
 }
-.mat-button {
-  height: 5vh;
-  width:2.3rem!important;
-  min-width: 0;
-  background-image: url("data:image/svg+xml;charset=utf8,%3Csvg viewBox='0 0 32 32' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath stroke='rgba(255,102,203, 0.7)' stroke-width='2' stroke-linecap='round' stroke-miterlimit='10' d='M4 8h24M4 16h24M4 24h24'/%3E%3C/svg%3E");
-  background-repeat: no-repeat;
+
+.material-icons.md-18 {
+  font-size: 18px;
 }
-.container {
-  display: flex;
-  flex-direction: row;
-  background-color: #00c9d6;
-  justify-content: flex-end;
-  align-items: center;
-  width: 100%;
-  padding: 0;
+
+.material-icons.md-24 {
+  font-size: 24px;
 }
-.menu {
-  display: flex;
-  width: 100%;
-  flex-direction: row;
-  justify-content: flex-end;
+
+.material-icons.md-36 {
+  font-size: 36px;
 }
-ul {
-  margin: 0;
+
+.material-icons.md-48 {
+  font-size: 48px;
 }
-.menu > li {
-  width: 5em;
-  list-style-type: none;
+.example-icon {
+  padding: 0 14px;
+}
+
+.example-spacer {
+  flex: 1 1 auto;
+}
+
+.mat-toolbar {
+  position: fixed;
+  bottom: 0;
 }
