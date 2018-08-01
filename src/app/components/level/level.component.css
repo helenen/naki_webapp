@@ -1,14 +1,20 @@
+@import '~@angular/material/prebuilt-themes/deeppurple-amber.css';
+.container{
+  height: 10vh;
+  margin-top: 8rem;
+}
+.mat-raised-button{
+  height: 9vh;
+  width: 9rem;
+}
+
 .container {
   display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
-  margin-top: 10%;
+  margin-top: 7rem;
+  height: 40vh;
+  justify-content: space-between;
 }
-.level_items {
-  height: 15vh;
-  width: 10em;
-  background-color: red;
-  border-radius: 10px;
-  margin-bottom: 10px;
+.mat-raised-button{
+  height: 10vh;
+  width: 9rem;
 }

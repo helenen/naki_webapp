@@ -1,3 +1,5 @@
+import { ExerciseComponent } from "./components/exercise/exercise.component";
+import { ExerciseService } from "./components/exercise/exercise.service";
 import { LessonService } from "./components/lesson//lesson.service";
 import { LevelService } from "./components/level/level.service";
 import { ThemeService } from "./components/theme/theme.service";
@@ -20,12 +22,16 @@ import { MaterialModule } from "./material/material.module";
 import { LayoutModule } from "@angular/cdk/layout";
 import { BrowserAnimationsModule } from "@angular/platform-browser/animations";
 import { FlexLayoutModule } from "@angular/flex-layout";
+import {MatListModule} from "@angular/material/list";
+
+
 
 
 const Routes: Route[] = [
   { path: "", component: LevelComponent },
   { path: "themes", component: ThemeComponent },
-  { path: "lessons", component: LessonComponent }
+  { path: "lessons", component: LessonComponent },
+  {path: "exercises/:id", component: ExerciseComponent}
 ];
 @NgModule({
   declarations: [
@@ -34,7 +40,8 @@ const Routes: Route[] = [
     MenuComponent,
     ThemeComponent,
     LessonComponent,
-    LessonDetailsComponent
+    LessonDetailsComponent,
+    ExerciseComponent
   ],
   imports: [
     BrowserModule,
@@ -45,9 +52,10 @@ const Routes: Route[] = [
     MaterialModule,
     LayoutModule,
     BrowserAnimationsModule,
-    FlexLayoutModule
+    FlexLayoutModule,
+    MatListModule
   ],
-  providers: [ThemeService, LevelService, LessonService, GenerateURLService],
+  providers: [ThemeService, LevelService, LessonService, GenerateURLService, ExerciseService],
   bootstrap: [AppComponent]
 })
 export class AppModule {}

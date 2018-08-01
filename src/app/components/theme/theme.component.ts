@@ -1,6 +1,7 @@
 import { ThemeService } from "./theme.service";
 import { Component, OnInit } from "@angular/core";
 import "rxjs/add/operator/map";
+import {Theme} from "../../models/theme";
 
 @Component({
   selector: "app-theme",
@@ -8,6 +9,12 @@ import "rxjs/add/operator/map";
   styleUrls: ["./theme.component.css"]
 })
 export class ThemeComponent implements OnInit {
-  constructor() {}
-  ngOnInit() {}
+  themes: Theme[];
+
+  constructor(private themeService:ThemeService) {}
+  ngOnInit() {
+    this.themeService.getThemes().subscribe((theme: Theme[]) => {
+      this.themes = theme;
+    });
+  }
 }
