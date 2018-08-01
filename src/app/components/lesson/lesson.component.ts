@@ -15,7 +15,7 @@ export class LessonComponent implements OnInit {
 
 constructor(private lessonService: LessonService, /*private levelPipe: LevelPipe*/) {}
   ngOnInit() {
-    this.lessonService.getLessons(1).subscribe((lesson: Lesson[]) => {
+    this.lessonService.getLessons().subscribe((lesson: Lesson[]) => {
       this.lessons = lesson;
     });
   }
