@@ -1,5 +1,5 @@
-<div class="container">
-  <button class="topic_items">Vocabulaire</button>
-  <button routerLink="/lessons" class="topic_items">Grammaire</button>
-  <button class="topic_items">Dialogue</button>
+<div class="container" fxLayout="column" fxLayoutAlign="space-between center">
+  <div *ngFor=" let theme of themes" >
+    <button mat-raised-button color="primary" size="medium" class="topic_items">{{theme.name}}</button>
+  </div>
 </div>

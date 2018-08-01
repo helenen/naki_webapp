@@ -1,14 +1,18 @@
-.container {
+.mat-list {
   display: flex;
   flex-direction: column;
   justify-content: center;
-  align-items: center;
   margin-top: 10%;
 }
-.lesson_item {
-  height: 7vh;
-  width: 15em;
-  background-color: #ffb168;
-  border-radius: 10px;
-  margin-bottom: 10px;
+.mat-list .mat-list-item-content{
+  display:flex;
+  align-items: flex-start !important;
+}
+.example-card {
+  max-width: 400px;
+}
+
+.example-header-image {
+  background-image: url('https://material.angular.io/assets/img/examples/shiba1.jpg');
+  background-size: cover;
 }
