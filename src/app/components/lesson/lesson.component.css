@@ -9,17 +9,33 @@
   display:flex;
   align-items: flex-start !important;
 }
-.example-card {
+.container{
+  padding-top: 2.6rem;
+  width: 100%;
+}
+.example-card .mat-card{
   max-width: 400px;
 }
-
-.example-header-image {
-  background-image: url('https://material.angular.io/assets/img/examples/shiba1.jpg');
-  background-size: cover;
-}
 .mat-card-title{
-  width: 17rem;
+  width: 15rem;
+
+
 }
 .row{
+  height: 8vh;
   margin-left: 0.8rem;
+  padding-top: 0.4rem;
+  width: 18rem;
+}
+.mat-icon{
+  margin-top: -0.5rem;
+}
+
+.mat-card{
+  height: 18vh;
+  width: 19rem;
+  margin-bottom: 1.3rem;
+  padding-top: 0.8rem;
+  
+  
 }

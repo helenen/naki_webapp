@@ -29,9 +29,8 @@ import {MatListModule} from "@angular/material/list";
 
 const Routes: Route[] = [
   { path: "", component: LevelComponent },
-  { path: "themes", component: ThemeComponent },
-  { path: "lessons", component: LessonComponent },
-  {path: "exercises/:id", component: ExerciseComponent}
+  { path: "themes/:id", component: ThemeComponent },
+  { path: "lessons", component: LessonComponent }
 ];
 @NgModule({
   declarations: [

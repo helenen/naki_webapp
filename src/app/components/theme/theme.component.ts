@@ -2,6 +2,8 @@ import { ThemeService } from "./theme.service";
 import { Component, OnInit } from "@angular/core";
 import "rxjs/add/operator/map";
 import {Theme} from "../../models/theme";
+import { Router } from "@angular/router";
+import { ActivatedRoute } from "@angular/router";
 
 @Component({
   selector: "app-theme",
