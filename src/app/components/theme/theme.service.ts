@@ -11,4 +11,9 @@ export class ThemeService {
        .get("/themes")
        .map((res: Response) => res.json());
     }
+    // getThemesById(id: number) {
+    //   return this.generateURLService
+    //      .get("/themes", id)
+    //      .map((res: Response) => res.json());
+    //   }
 }

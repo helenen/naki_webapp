@@ -14,7 +14,7 @@ import { Observable } from "rxjs";
 export class LessonService {
   private apiUrl = environment.api_Url;
 
-  lesson = Lesson;
+  lessonId: number;
 
   constructor(private http: Http, private generateURLService: GenerateURLService) {}
 
@@ -34,7 +34,7 @@ export class LessonService {
   //     .get("lessons", id)
   //     .map((res: Response) => res.json());
   // }
-  getLessons(): Observable<Lesson[]> {
+  getLessons(): Observable<Lesson> {
     return this.generateURLService
       .get("/lessons")
       .map((res: Response) => res.json()) ;

@@ -1,7 +1,8 @@
 import { Component, OnInit } from "@angular/core";
 import { LevelService } from "./level.service";
 import {Level} from "../../models/level";
-
+import { ActivatedRoute } from "@angular/router";
+import { LocalStorage } from "ngx-store";
 
 
 @Component({
@@ -10,15 +11,21 @@ import {Level} from "../../models/level";
   styleUrls: ["./level.component.css"]
 })
 export class LevelComponent implements OnInit {
-  levels: Level[];
-  
-  constructor(private levelService: LevelService) {
+  @LocalStorage()levels: Level;
+  constructor(private levelService: LevelService, private route: ActivatedRoute) {
   }
 
   ngOnInit() {
-    this.levelService.getLevels().subscribe((level: Level[]) => {
-      this.levels = level;
+  
+    this.route.params
+  .map(params => params["id"])
+  .subscribe((id) => {
+    this.levelService
+      .getLevels()
+      .subscribe(level => {
+        this.levels = level;
+      });
     });
-
   }
+    
 }
