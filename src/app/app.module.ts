@@ -17,21 +17,20 @@ import { ThemeComponent } from "./components/theme/theme.component";
 import { LessonComponent } from "./components/lesson/lesson.component";
 
 import {GenerateURLService} from "./general_service/generateUrl.service";
-import { LessonDetailsComponent } from "./components/lesson-details/lesson-details.component";
 import { MaterialModule } from "./material/material.module";
 import { LayoutModule } from "@angular/cdk/layout";
 import { BrowserAnimationsModule } from "@angular/platform-browser/animations";
 import { FlexLayoutModule } from "@angular/flex-layout";
 import {MatListModule} from "@angular/material/list";
+import { WebStorageModule } from 'ngx-store';
 
 
 
 
 const Routes: Route[] = [
   { path: "", component: LevelComponent },
-  { path: "themes", component: ThemeComponent },
-  { path: "lessons", component: LessonComponent },
-  {path: "exercises/:id", component: ExerciseComponent}
+  { path: "level/:id", component: ThemeComponent },
+  { path: "level/:id/:themeName/lessons", component: LessonComponent }
 ];
 @NgModule({
   declarations: [
@@ -40,7 +39,6 @@ const Routes: Route[] = [
     MenuComponent,
     ThemeComponent,
     LessonComponent,
-    LessonDetailsComponent,
     ExerciseComponent
   ],
   imports: [
@@ -53,7 +51,8 @@ const Routes: Route[] = [
     LayoutModule,
     BrowserAnimationsModule,
     FlexLayoutModule,
-    MatListModule
+    MatListModule,
+    WebStorageModule
   ],
   providers: [ThemeService, LevelService, LessonService, GenerateURLService, ExerciseService],
   bootstrap: [AppComponent]

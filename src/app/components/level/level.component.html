@@ -1,6 +1,6 @@
 <div class="container" fxLayout="column" fxLayoutAlign="space-between center">
   <div  *ngFor=" let level of levels" >
-    <button mat-raised-button color="primary" routerLink="/themes" size="medium">{{level.name}}</button>
+    <button mat-raised-button color="primary" size="medium" [routerLink]="['/level', level.id]">{{level.name}}</button>
   </div>
 </div>
 
