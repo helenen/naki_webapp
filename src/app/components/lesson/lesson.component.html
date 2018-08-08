@@ -6,8 +6,10 @@
         <mat-card-title>leçon {{lesson.id}}: {{lesson.name}}</mat-card-title>
       </mat-card-header>
     </div>
-    <mat-card-actions>
-      <button mat-raised-button color="primary" >Cours</button>
+    <mat-card-actions *ngFor="let theme of themes">
+        <button mat-raised-button color="primary" [routerLink]="['/level',levelId, theme.name, 'lesson', lessonId, 'cours']" >  
+         Cours
+        </button>
       <button mat-raised-button color="primary">Exercice</button>
     </mat-card-actions>
   </mat-card>

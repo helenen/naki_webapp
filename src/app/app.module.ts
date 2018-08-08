@@ -22,7 +22,8 @@ import { LayoutModule } from "@angular/cdk/layout";
 import { BrowserAnimationsModule } from "@angular/platform-browser/animations";
 import { FlexLayoutModule } from "@angular/flex-layout";
 import {MatListModule} from "@angular/material/list";
-import { WebStorageModule } from 'ngx-store';
+import { WebStorageModule } from "ngx-store";
+import { CoursComponent } from "./components/cours/cours.component";
 
 
 
@@ -30,7 +31,8 @@ import { WebStorageModule } from 'ngx-store';
 const Routes: Route[] = [
   { path: "", component: LevelComponent },
   { path: "level/:id", component: ThemeComponent },
-  { path: "level/:id/:themeName/lessons", component: LessonComponent }
+  { path: "level/:id/:themeName/lessons", component: LessonComponent },
+  { path: "level/:id/:themeName/lessons/:id/cours", component: CoursComponent}
 ];
 @NgModule({
   declarations: [
@@ -39,7 +41,8 @@ const Routes: Route[] = [
     MenuComponent,
     ThemeComponent,
     LessonComponent,
-    ExerciseComponent
+    ExerciseComponent,
+    CoursComponent
   ],
   imports: [
     BrowserModule,

@@ -19,7 +19,7 @@ export class ThemeComponent implements OnInit {
 
   constructor(private themeService:ThemeService, private levelService: LevelService,
     private lessonService: LessonService, private route: ActivatedRoute) {
-
+        
     }
   ngOnInit() {
     this.themeService.getThemes().subscribe((theme: Theme[]) => {
