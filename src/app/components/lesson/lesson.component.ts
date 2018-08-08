@@ -14,7 +14,6 @@ import { LocalStorage } from "ngx-store";
   styleUrls: ["./lesson.component.css"]
 })
 export class LessonComponent implements OnInit {
-  chapters: Chapter[];
   @LocalStorage()lessons: Lesson;
 
 constructor(private lessonService: LessonService,  private route: ActivatedRoute, 

@@ -1,3 +1,10 @@
-<p>
-  cours works!
-</p>
+<div class="container">
+  <div *ngfor="let chapter of chapters">
+      <div>{{chapter.name}}</div>
+  </div>
+ <div *ngFor="let text of texts" >
+    <div>{{text.text}}</div>
+    <div>{{text.exemple}}</div>
+ </div>
+  
+</div>

@@ -18,12 +18,7 @@ export class LessonService {
 
   constructor(private http: Http, private generateURLService: GenerateURLService) {}
 
-  getchapters(): Observable<Chapter> {
 
-    return this.http
-      .get(this.apiUrl + "/chapters")
-      .map((res: Response) => res.json());
-  }
 /**
      * Makes an HTTP GET call to retrieve a specific oldProjecct using its ID
      * @param id of the project requested
