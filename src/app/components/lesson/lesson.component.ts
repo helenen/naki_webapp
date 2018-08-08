@@ -18,42 +18,41 @@ import {Level} from "../../models/level";
 })
 export class LessonComponent implements OnInit {
   levelId: number;
-  themeName: Theme[];
   themes: Theme[];
-  lessonId: number;
-  lessonsByLevel: Level;
-  @LocalStorage()lessons: Lesson;
+  lessonsByLevel:Level ;
+  //@LocalStorage()lessons: Lesson;
 
 constructor(private lessonService: LessonService,  private route: ActivatedRoute,
    private levelService: LevelService, private themeService: ThemeService) {}
   ngOnInit() {
-  // console.log(this.levelId, "level");
-  //     this.route.params
-  //   .map(params => params["id"])
-  //   .subscribe((id) => {
-  //     this.lessonService
-  //       .getLessons()
-  //       .subscribe(lesson => {
-  //         this.lessons = lesson;
-  //       this.lessonService.lessonId = lesson.id;
-  //     });
-  //   });
-    this.levelId = +this.route.snapshot.params.id;
+
+    // this.route.params
+    // .map(params => params["id"])
+    // .subscribe((id) => {
+    //   this.lessonService
+    //     .getLessons()
+    //     .subscribe(lesson => {
+    //       this.lessons = lesson;
+    //   });
+    // });
 
     this.themeService.getThemes().subscribe((theme: Theme[]) => {
       this.themes = theme;
     });
-
+    this.levelId = +this.route.snapshot.params.id;
 
     this.route.params
     .map(params => params["id"])
     .subscribe((id) => {
-      this.levelService
-        .getLessonsByLevel()
+      this.lessonService
+        .getLessonsByLevel(id)
         .subscribe(lessonsBylevel => {
         this.levelService.lessonsByLevel = lessonsBylevel;
       });
     });
-    
+
+    //console.log(this.levelId, "level");
+    console.log(this.lessonsByLevel, "lessonBylevel");
+    //console.log(this.lessons, "lesson");
   }
 }

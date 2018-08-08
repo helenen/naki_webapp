@@ -1,3 +1,4 @@
+import { CoursComponent } from "./components/cours/cours.component";
 import { ExerciseComponent } from "./components/exercise/exercise.component";
 import { ExerciseService } from "./components/exercise/exercise.service";
 import { LessonService } from "./components/lesson//lesson.service";
@@ -23,7 +24,6 @@ import { BrowserAnimationsModule } from "@angular/platform-browser/animations";
 import { FlexLayoutModule } from "@angular/flex-layout";
 import {MatListModule} from "@angular/material/list";
 import { WebStorageModule } from "ngx-store";
-import { CoursComponent } from "./components/cours/cours.component";
 
 
 

@@ -10,9 +10,9 @@ import {Level} from "../../models/level";
 @Injectable()
 export class LevelService {
   lessonsByLevel: Level;
-
+  levels: Level;
   constructor( private generateURLService: GenerateURLService) {
-   
+
   }
 
   getLevels(): Observable<Level> {
@@ -20,15 +20,6 @@ export class LevelService {
       .get( "/levels")
       .map((res: Response) => res.json());
     }
-
-    getLessonsByLevel(): Observable<Level> {
-      return this.generateURLService
-      .get( "level/{id}/lesson")
-      .map((res: Response) => res.json());
-
-    }
-
-
   }
 
 

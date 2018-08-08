@@ -1,8 +1,10 @@
-import { Chapter } from './../../models/chapter';
+import { Level } from "./../../models/level";
+import { Chapter } from "./../../models/chapter";
 import { Injectable } from "@angular/core";
 import { Http, Response } from "@angular/http";
 import { environment } from "../../../environments/environment";
 import "rxjs/add/operator/map";
+
 
 import {Lesson} from "../../models/lesson";
 import {GenerateURLService} from "../../general_service/generateUrl.service";
@@ -14,7 +16,7 @@ import { Observable } from "rxjs";
 export class LessonService {
   private apiUrl = environment.api_Url;
 
-  lessonId: number;
+  lessons: number;
 
   constructor(private http: Http, private generateURLService: GenerateURLService) {}
 
@@ -38,6 +40,13 @@ export class LessonService {
     return this.generateURLService
       .get("/lessons")
       .map((res: Response) => res.json()) ;
+  }
+
+  getLessonsByLevel(id: number): Observable<Level> {
+    return this.generateURLService
+    .get( `level/${id}/lesson`)
+    .map((res: Response) => res.json());
+
   }
 
 }

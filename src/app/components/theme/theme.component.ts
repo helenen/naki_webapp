@@ -18,9 +18,7 @@ export class ThemeComponent implements OnInit {
   lessonId: number;
 
   constructor(private themeService:ThemeService, private levelService: LevelService,
-    private lessonService: LessonService, private route: ActivatedRoute) {
-        
-    }
+    private lessonService: LessonService, private route: ActivatedRoute) {}
   ngOnInit() {
     this.themeService.getThemes().subscribe((theme: Theme[]) => {
       this.themes = theme;
