@@ -32,7 +32,7 @@ const Routes: Route[] = [
   { path: "", component: LevelComponent },
   { path: "level/:id", component: ThemeComponent },
   { path: "level/:id/:themeName/lessons", component: LessonComponent },
-  { path: "level/:id/:themeName/lessons/:id/cours", component: CoursComponent}
+  { path: "level/:levelId/:themeName/lessons/:lessonId/cours", component: CoursComponent}
 ];
 @NgModule({
   declarations: [

@@ -47,12 +47,9 @@ constructor(private lessonService: LessonService,  private route: ActivatedRoute
       this.lessonService
         .getLessonsByLevel(id)
         .subscribe(lessonsBylevel => {
-        this.levelService.lessonsByLevel = lessonsBylevel;
+        this.lessonsByLevel = lessonsBylevel;
+        console.log(this.lessonsByLevel);
       });
     });
-
-    //console.log(this.levelId, "level");
-    console.log(this.lessonsByLevel, "lessonBylevel");
-    //console.log(this.lessons, "lesson");
   }
 }
