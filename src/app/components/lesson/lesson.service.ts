@@ -15,17 +15,12 @@ import { Observable } from "rxjs";
 @Injectable()
 export class LessonService {
   private apiUrl = environment.api_Url;
-
+  levelId: number;
   lessons: number;
 
   constructor(private http: Http, private generateURLService: GenerateURLService) {}
 
-  getchapters(): Observable<Chapter> {
 
-    return this.http
-      .get(this.apiUrl + "/chapters")
-      .map((res: Response) => res.json());
-  }
 /**
      * Makes an HTTP GET call to retrieve a specific oldProjecct using its ID
      * @param id of the project requested
@@ -42,9 +37,9 @@ export class LessonService {
       .map((res: Response) => res.json()) ;
   }
 
-  getLessonsByLevel(id: number): Observable<Level> {
+  getLessonsByLevel(levelId: number): Observable<Level> {
     return this.generateURLService
-    .get( `level/${id}/lesson`)
+    .get( `level/${levelId}/lesson`)
     .map((res: Response) => res.json());
 
   }

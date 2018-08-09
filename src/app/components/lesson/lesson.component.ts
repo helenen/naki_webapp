@@ -25,30 +25,16 @@ export class LessonComponent implements OnInit {
 constructor(private lessonService: LessonService,  private route: ActivatedRoute,
    private levelService: LevelService, private themeService: ThemeService) {}
   ngOnInit() {
-
-    // this.route.params
-    // .map(params => params["id"])
-    // .subscribe((id) => {
-    //   this.lessonService
-    //     .getLessons()
-    //     .subscribe(lesson => {
-    //       this.lessons = lesson;
-    //   });
-    // });
-
-    this.themeService.getThemes().subscribe((theme: Theme[]) => {
-      this.themes = theme;
-    });
     this.levelId = +this.route.snapshot.params.id;
 
     this.route.params
     .map(params => params["id"])
     .subscribe((id) => {
       this.lessonService
-        .getLessonsByLevel(id)
+        .getLessonsByLevel(this.levelId)
         .subscribe(lessonsBylevel => {
         this.lessonsByLevel = lessonsBylevel;
-        console.log(this.lessonsByLevel);
+        console.log(this.lessonsByLevel,"po");
       });
     });
   }

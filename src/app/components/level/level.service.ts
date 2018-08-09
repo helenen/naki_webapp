@@ -9,7 +9,6 @@ import {Level} from "../../models/level";
 
 @Injectable()
 export class LevelService {
-  lessonsByLevel: Level;
   levels: Level;
   constructor( private generateURLService: GenerateURLService) {
 
