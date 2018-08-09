@@ -1,8 +1,7 @@
-<div class="container">
-  <div *ngfor="let chapter of chapters">
+<div class="container" *ngFor="let chapter of chapterByLessons">
       <div>{{chapter.name}}</div>
-  </div>
- <div *ngFor="let text of texts" >
+
+ <div class="pou" *ngFor="let text of texts" >
     <div>{{text.text}}</div>
     <div>{{text.exemple}}</div>
  </div>
