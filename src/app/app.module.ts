@@ -1,4 +1,4 @@
-import { CoursComponent } from './components/cours/cours.component';
+import { CoursComponent } from "./components/cours/cours.component";
 import { ExerciseComponent } from "./components/exercise/exercise.component";
 import { ExerciseService } from "./components/exercise/exercise.service";
 import { LessonService } from "./components/lesson//lesson.service";
@@ -23,7 +23,8 @@ import { LayoutModule } from "@angular/cdk/layout";
 import { BrowserAnimationsModule } from "@angular/platform-browser/animations";
 import { FlexLayoutModule } from "@angular/flex-layout";
 import {MatListModule} from "@angular/material/list";
-import { WebStorageModule } from 'ngx-store';
+import { WebStorageModule } from "ngx-store";
+import { CoursService } from "./components/cours/cours.service";
 
 
 
@@ -32,6 +33,7 @@ const Routes: Route[] = [
   { path: "", component: LevelComponent },
   { path: "level/:id", component: ThemeComponent },
   { path: "level/:id/:themeName/lessons", component: LessonComponent },
+  //{ path: "level/:levelId/:themeName/lessons/:lessonId/cours", component: CoursComponent}
   { path: "cours", component: CoursComponent}
 ];
 @NgModule({
@@ -57,7 +59,7 @@ const Routes: Route[] = [
     MatListModule,
     WebStorageModule
   ],
-  providers: [ThemeService, LevelService, LessonService, GenerateURLService, ExerciseService],
+  providers: [ThemeService, LevelService, LessonService, GenerateURLService, ExerciseService, CoursService],
   bootstrap: [AppComponent]
 })
 export class AppModule {}

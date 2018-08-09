@@ -12,6 +12,8 @@ import { LocalStorage } from "ngx-store";
 })
 export class LevelComponent implements OnInit {
   @LocalStorage()levels: Level;
+ 
+  
   constructor(private levelService: LevelService, private route: ActivatedRoute) {
   }
 

@@ -9,9 +9,10 @@ import {Level} from "../../models/level";
 
 @Injectable()
 export class LevelService {
+  levels: Level;
+  constructor( private generateURLService: GenerateURLService) {
 
-
-  constructor( private generateURLService: GenerateURLService) {}
+  }
 
   getLevels(): Observable<Level> {
     return this.generateURLService
