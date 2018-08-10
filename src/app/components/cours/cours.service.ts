@@ -1,3 +1,5 @@
+import { LessonService } from './../lesson/lesson.service';
+import { Lesson } from "./../../models/lesson";
 import { Chapter } from "./../../models/chapter";
 import { Injectable } from "@angular/core";
 import { Http, Response } from "@angular/http";
@@ -11,16 +13,15 @@ import { Observable } from "rxjs";
 
 @Injectable()
 export class CoursService {
- chapter: Chapter;
+  lessonId: number;
 
 
-  constructor(private generateURLService: GenerateURLService) {}
+  constructor(private generateURLService: GenerateURLService, private lessonService: LessonService) {}
 
-  getchapters(): Observable<Chapter> {
+  getCoursByLesson(lessonId: number): Observable<Lesson> {
     return this.generateURLService
-      .get("/chapters")
+      .get(`lesson/${lessonId}/chapters`)
       .map((res: Response) => res.json());
   }
-
 
 }

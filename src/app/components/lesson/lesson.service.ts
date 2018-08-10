@@ -16,9 +16,10 @@ import { Observable } from "rxjs";
 export class LessonService {
   private apiUrl = environment.api_Url;
   levelId: number;
-  lessons: number;
+  lessonId: number;
+  lessonByLevel: number;
 
-  constructor(private http: Http, private generateURLService: GenerateURLService) {}
+  constructor(private generateURLService: GenerateURLService) {}
 
 
 /**
@@ -26,11 +27,7 @@ export class LessonService {
      * @param id of the project requested
      * @returns {Observable<Lesson>} the project requested
      */
-  // getchapterByLesson(id: number): Observable<Lesson[]> {
-  //   return this.generateURLService
-  //     .get("lessons", id)
-  //     .map((res: Response) => res.json());
-  // }
+
   getLessons(): Observable<Lesson> {
     return this.generateURLService
       .get("/lessons")

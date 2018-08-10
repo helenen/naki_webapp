@@ -1,0 +1,9 @@
+.container{
+    padding: 0;
+}
+.chapterTitle{
+    height: 10vh;
+    width: 100%;
+    background-color: #FF9F94;
+    font-size: 1.2rem;
+}
