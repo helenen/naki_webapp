@@ -19,8 +19,8 @@ import {Level} from "../../models/level";
 export class LessonComponent implements OnInit {
   levelId: number;
   themes: Theme[];
-  lessonsByLevel:Level ;
-  //@LocalStorage()lessons: Lesson;
+  lessonsByLevel: Level ;
+   // @LocalStorage()lessons: Lesson;
 
 constructor(private lessonService: LessonService,  private route: ActivatedRoute,
    private levelService: LevelService, private themeService: ThemeService) {}
@@ -34,7 +34,7 @@ constructor(private lessonService: LessonService,  private route: ActivatedRoute
         .getLessonsByLevel(this.levelId)
         .subscribe(lessonsBylevel => {
         this.lessonsByLevel = lessonsBylevel;
-        console.log(this.lessonsByLevel,"po");
+        console.log(this.lessonsByLevel, "po");
       });
     });
   }

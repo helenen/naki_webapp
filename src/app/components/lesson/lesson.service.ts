@@ -17,8 +17,9 @@ export class LessonService {
   private apiUrl = environment.api_Url;
   levelId: number;
   lessonId: number;
+  lessonByLevel: number;
 
-  constructor(private http: Http, private generateURLService: GenerateURLService) {}
+  constructor(private generateURLService: GenerateURLService) {}
 
 
 /**
@@ -26,7 +27,7 @@ export class LessonService {
      * @param id of the project requested
      * @returns {Observable<Lesson>} the project requested
      */
- 
+
   getLessons(): Observable<Lesson> {
     return this.generateURLService
       .get("/lessons")

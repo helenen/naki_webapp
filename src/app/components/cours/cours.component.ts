@@ -1,3 +1,4 @@
+import { LessonService } from './../lesson/lesson.service';
 import { LevelService } from './../level/level.service';
 import { ActivatedRoute } from '@angular/router';
 import { CoursService } from './cours.service';
@@ -11,27 +12,28 @@ import {Lesson} from "../../models/lesson";
   styleUrls: ['./cours.component.css']
 })
 export class CoursComponent implements OnInit {
-  chapterByLesson: Lesson;
-  levelId: number;
+  chaptersByLesson: Lesson;
+  lessonId: number;
 
   constructor(private coursService: CoursService, private route: ActivatedRoute, 
-    private levelService: LevelService) { }
+    private levelService: LevelService, private lessonService: LessonService ) { }
 
   
   ngOnInit() {
 
-    this.levelId = +this.route.snapshot.params.id;
+    // activatedRoutes ;  route récupéré dans le app.module donc il faut précisé lessonId à la place de id
+    this.lessonId = +this.route.snapshot.params.lessonId;
 
-    this.route.params
-    .map(params => params["id"])
-    .subscribe((id) => {
-      this.coursService
-        .getCoursByLesson(id)
-        .subscribe(chapterByLesson => {
-        this.chapterByLesson = chapterByLesson;
-        console.log(this.chapterByLesson);
+    // met lesson.id dans la méthode coursByLesson
+      this.route.params
+      .map(params => params["id"])
+      .subscribe((id) => {
+        this.coursService
+          .getCoursByLesson(this.lessonId)
+          .subscribe(chaptersByLesson => {
+          this.chaptersByLesson = chaptersByLesson;
+            console.log(this.chaptersByLesson, "chapitres");
+          });
       });
-  });
-
-}
+  }
 }
