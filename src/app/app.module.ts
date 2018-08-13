@@ -17,24 +17,23 @@ import { MenuComponent } from "./components/menu/menu.component";
 import { ThemeComponent } from "./components/theme/theme.component";
 import { LessonComponent } from "./components/lesson/lesson.component";
 
-import {GenerateURLService} from "./general_service/generateUrl.service";
+import { GenerateURLService } from "./general_service/generateUrl.service";
 import { MaterialModule } from "./material/material.module";
 import { LayoutModule } from "@angular/cdk/layout";
 import { BrowserAnimationsModule } from "@angular/platform-browser/animations";
 import { FlexLayoutModule } from "@angular/flex-layout";
-import {MatListModule} from "@angular/material/list";
+import { MatListModule } from "@angular/material/list";
 import { WebStorageModule } from "ngx-store";
 import { CoursService } from "./components/cours/cours.service";
-
-
-
 
 const Routes: Route[] = [
   { path: "", component: LevelComponent },
   { path: "level/:id", component: ThemeComponent },
   { path: "level/:id/:themeName/lessons", component: LessonComponent },
-  { path: "level/:levelId/:themeName/lesson/:lessonId/cours", component: CoursComponent}
-
+  {
+    path: "level/:levelId/:themeName/lesson/:lessonId/cours",
+    component: CoursComponent
+  }
 ];
 @NgModule({
   declarations: [
@@ -59,7 +58,14 @@ const Routes: Route[] = [
     MatListModule,
     WebStorageModule
   ],
-  providers: [ThemeService, LevelService, LessonService, GenerateURLService, ExerciseService, CoursService],
+  providers: [
+    ThemeService,
+    LevelService,
+    LessonService,
+    GenerateURLService,
+    ExerciseService,
+    CoursService
+  ],
   bootstrap: [AppComponent]
 })
 export class AppModule {}
