@@ -28,27 +28,26 @@ export class CoursComponent implements OnInit {
     // activatedRoutes ;  route récupéré dans le app.module donc il faut précisé lessonId à la place de id
     this.lessonId = +this.route.snapshot.params.lessonId;
 
+    this.chapterId = +this.route.snapshot.params.chapterId;
+    console.log(this.chapterId, "chapter Id dans cours");
+
     // met lesson.id dans la méthode coursByLesson
     this.route.params.map(params => params["id"]).subscribe(id => {
       this.coursService
         .getCoursByLesson(this.lessonId)
         .subscribe(chaptersByLesson => {
           this.chaptersByLesson = chaptersByLesson;
-          console.log(this.chaptersByLesson, "chapitres");
+          console.log(this.chaptersByLesson, "chapitres par lesson dans cours");
         });
     });
 
-    this.coursService.getTextsByChapter(1).subscribe((chapter: Chapter) => {
-      this.chapterId = chapter.id;
-      console.log(this.chapterId "texts");
-    }
-    // this.route.params.map(params => params["id"]).subscribe(id => {
-    //   this.coursService
-    //     .getTextsByChapter(this.chapterId)
-    //     .subscribe(textsByChapter => {
-    //       this.textsByChapter = this.textsByChapter;
-    //     });
-    //   console.log(this.textsByChapter, "texts");
-    // });
+    this.route.params.map(params => params["id"]).subscribe(id => {
+      this.coursService
+        .getTextsByChapter(this.chapterId)
+        .subscribe(textsByChapter => {
+          this.textsByChapter = this.textsByChapter;
+        });
+      console.log(this.textsByChapter, "texts par chapitre dans cours");
+    });
   }
 }

@@ -19,6 +19,7 @@ export class LessonComponent implements OnInit {
   levelId: number;
   themes: Theme[];
   lessonsByLevel: Level;
+  chapterId: Chapter;
   // @LocalStorage()lessons: Lesson;
 
   constructor(
@@ -37,6 +38,12 @@ export class LessonComponent implements OnInit {
           this.lessonsByLevel = lessonsBylevel;
           console.log(this.lessonsByLevel, "po");
         });
+    });
+    this.route.params.map(params => params["id"]).subscribe(id => {
+      this.lessonService.getChapters().subscribe(chapter => {
+        this.chapterId = chapter;
+        console.log(this.chapterId, "chapter dans lesson");
+      });
     });
   }
 }
