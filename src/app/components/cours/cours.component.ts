@@ -5,6 +5,7 @@ import { ActivatedRoute } from "@angular/router";
 import { CoursService } from "./cours.service";
 import { Component, OnInit } from "@angular/core";
 import { Lesson } from "../../models/lesson";
+import "rxjs/add/operator/filter";
 
 @Component({
   selector: "app-cours",
@@ -12,24 +13,24 @@ import { Lesson } from "../../models/lesson";
   styleUrls: ["./cours.component.css"]
 })
 export class CoursComponent implements OnInit {
-  chaptersByLesson: Lesson;
-  textsByChapter: Chapter;
+  chaptersByLesson: Lesson[] = [];
+  //textsByChapter: Chapter;
   lessonId: number;
   chapterId: number;
+  mapChaptersByLesson: number;
 
   constructor(
     private coursService: CoursService,
     private route: ActivatedRoute,
     private levelService: LevelService,
     private lessonService: LessonService
-  ) {}
+  ) {
+    console.log(this.chapterId, "a");
+  }
 
   ngOnInit() {
     // activatedRoutes ;  route récupéré dans le app.module donc il faut précisé lessonId à la place de id
     this.lessonId = +this.route.snapshot.params.lessonId;
-
-    this.chapterId = +this.route.snapshot.params.chapterId;
-    console.log(this.chapterId, "chapter Id dans cours");
 
     // met lesson.id dans la méthode coursByLesson
     this.route.params.map(params => params["id"]).subscribe(id => {
@@ -41,13 +42,8 @@ export class CoursComponent implements OnInit {
         });
     });
 
-    this.route.params.map(params => params["id"]).subscribe(id => {
-      this.coursService
-        .getTextsByChapter(this.chapterId)
-        .subscribe(textsByChapter => {
-          this.textsByChapter = this.textsByChapter;
-        });
-      console.log(this.textsByChapter, "texts par chapitre dans cours");
+    this.chaptersByLesson.forEach(chapter => {
+      this.chapterId = chapter.id;
     });
   }
 }

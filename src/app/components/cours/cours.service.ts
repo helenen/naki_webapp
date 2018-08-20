@@ -20,17 +20,17 @@ export class CoursService {
     private lessonService: LessonService
   ) {}
 
-  getCoursByLesson(lessonId: number): Observable<Lesson> {
+  getCoursByLesson(lessonId: number): Observable<Lesson[]> {
     return this.generateURLService
       .get(`lesson/${lessonId}/chapters`)
       .map((res: Response) => res.json());
   }
 
-  // getTextsByChapter(lessonId: number): Observable<Chapter> {
-  //   return this.generateURLService
-  //     .get(`lesson/${lessonId}/chapters`)
-  //     .map((res: Response) => res.json());
-  // }
+  getChapters() {
+    return this.generateURLService
+      .get("/chapters")
+      .map((res: Response) => res.json());
+  }
 
   getTextsByChapter(chapterId: number): Observable<Chapter> {
     return this.generateURLService

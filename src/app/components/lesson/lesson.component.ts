@@ -39,11 +39,5 @@ export class LessonComponent implements OnInit {
           console.log(this.lessonsByLevel, "po");
         });
     });
-    this.route.params.map(params => params["id"]).subscribe(id => {
-      this.lessonService.getChapters().subscribe(chapter => {
-        this.chapterId = chapter;
-        console.log(this.chapterId, "chapter dans lesson");
-      });
-    });
   }
 }

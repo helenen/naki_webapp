@@ -18,9 +18,7 @@ export class LessonService {
   lessonByLevel: number;
   chapterId: number;
 
-  constructor(private generateURLService: GenerateURLService) {
-    //console.log(this.lessonId, "lesson id dans lesson service");
-  }
+  constructor(private generateURLService: GenerateURLService) {}
 
   /**
    * Makes an HTTP GET call to retrieve a specific oldProjecct using its ID
@@ -37,12 +35,6 @@ export class LessonService {
   getLessonsByLevel(levelId: number): Observable<Level> {
     return this.generateURLService
       .get(`level/${levelId}/lesson`)
-      .map((res: Response) => res.json());
-  }
-
-  getChapters() {
-    return this.generateURLService
-      .get("/chapters")
       .map((res: Response) => res.json());
   }
 }
