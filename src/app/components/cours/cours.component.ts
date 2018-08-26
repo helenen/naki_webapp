@@ -6,6 +6,7 @@ import { CoursService } from "./cours.service";
 import { Component, OnInit } from "@angular/core";
 import { Lesson } from "../../models/lesson";
 import "rxjs/add/operator/filter";
+import "rxjs/add/operator/mergeMap";
 
 @Component({
   selector: "app-cours",
@@ -24,26 +25,24 @@ export class CoursComponent implements OnInit {
     private route: ActivatedRoute,
     private levelService: LevelService,
     private lessonService: LessonService
-  ) {
-    console.log(this.chapterId, "a");
-  }
+  ) {}
 
   ngOnInit() {
-    // activatedRoutes ;  route récupéré dans le app.module donc il faut précisé lessonId à la place de id
-    this.lessonId = +this.route.snapshot.params.lessonId;
-
     // met lesson.id dans la méthode coursByLesson
-    this.route.params.map(params => params["id"]).subscribe(id => {
-      this.coursService
-        .getCoursByLesson(this.lessonId)
-        .subscribe(chaptersByLesson => {
-          this.chaptersByLesson = chaptersByLesson;
-          console.log(this.chaptersByLesson, "chapitres par lesson dans cours");
-        });
-    });
+    this.route.params
+      .map(params => params["lessonId"])
+      .mergeMap(id => this.coursService.getCoursByLesson(id))
+      .subscribe(chaptersByLesson => {
+        this.chaptersByLesson = chaptersByLesson;
+        console.log(this.chaptersByLesson, "chapitres par lesson dans cours");
+      });
 
-    this.chaptersByLesson.forEach(chapter => {
-      this.chapterId = chapter.id;
-    });
+    // this.mapChaptersByLesson = this.chaptersByLesson.filter(chapter => {
+    //   return this.chapterId === chapter.id;
+    // });
+
+    // this.chaptersByLesson.forEach(chapter => {
+    //   this.chapterId = chapter.id;
+    // });
   }
 }

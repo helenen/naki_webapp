@@ -37,4 +37,14 @@ export class CoursService {
       .get(`chapter/${chapterId}/texts`)
       .map((res: Response) => res.json());
   }
+
+  // hydrateLessonsWithText(chapters: Chapter[]): Observable<Chapter[]> {
+  //   return Observable.forkJoin(
+  //     chapters.map(chapter => {
+  //       return this.getTextsByChapter(chapter.id);
+
+  //     })
+  //     console.log(this.getTextsByChapter, "textByChapter");
+  //   );
+  // }
 }
