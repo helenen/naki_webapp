@@ -11,6 +11,7 @@ import { ActivatedRoute } from "@angular/router";
 export class CoursDetailsComponent implements OnInit {
   coursId: number;
   textByChapter: Chapter;
+  exerciseByChapter: Chapter;
   lessonId: number;
   levelId: number;
 
@@ -29,6 +30,16 @@ export class CoursDetailsComponent implements OnInit {
       .subscribe(textByChapter => {
         this.textByChapter = textByChapter;
         console.log(this.textByChapter, "texts par cours");
+      });
+
+    this.route.params
+      .map(params => params["id"])
+      .mergeMap(id =>
+        this.coursDetailsService.getExercisesByChapter(this.coursId)
+      )
+      .subscribe(exerciseByChapter => {
+        this.exerciseByChapter = exerciseByChapter;
+        console.log(this.exerciseByChapter, "exercise par cours");
       });
   }
 }

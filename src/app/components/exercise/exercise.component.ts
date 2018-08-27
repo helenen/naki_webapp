@@ -17,9 +17,6 @@ export class ExerciseComponent implements OnInit {
       this.assets = asset;
     });
     this.audio = new Audio();
-    this.audio.src =
-      "/Users/heleneniassy/Documents/helene/cours/titre pro/naki/naki_webapp/src/assets/lion.mp3";
-
-    this.audio.play();
+    this.audio.src = this.audio.play();
   }
 }

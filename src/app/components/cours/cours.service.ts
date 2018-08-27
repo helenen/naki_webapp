@@ -24,20 +24,4 @@ export class CoursService {
       .get(`lesson/${lessonId}/chapters`)
       .map((res: Response) => res.json());
   }
-
-  getChapters() {
-    return this.generateURLService
-      .get("/chapters")
-      .map((res: Response) => res.json());
-  }
-
-  // hydrateLessonsWithText(chapters: Chapter[]): Observable<Chapter[]> {
-  //   return Observable.forkJoin(
-  //     chapters.map(chapter => {
-  //       return this.getTextsByChapter(chapter.id);
-
-  //     })
-  //     console.log(this.getTextsByChapter, "textByChapter");
-  //   );
-  // }
 }

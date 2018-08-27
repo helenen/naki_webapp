@@ -22,4 +22,9 @@ export class CoursDetailsService {
       .get(`chapter/${coursId}/texts`)
       .map((res: Response) => res.json());
   }
+  getExercisesByChapter(coursId: number): Observable<Chapter> {
+    return this.generateURLService
+      .get(`chapter/${coursId}/exercises`)
+      .map((res: Response) => res.json());
+  }
 }

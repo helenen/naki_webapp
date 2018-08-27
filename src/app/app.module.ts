@@ -41,7 +41,8 @@ const Routes: Route[] = [
     component: CoursDetailsComponent
   },
   {
-    path: "level/:levelId/:themeName/lesson/:lessonId/cours/:coursId/exercise",
+    path:
+      "level/:levelId/:themeName/lesson/:lessonId/cours/:coursId/exercise/:exerciseId",
     component: ExerciseComponent
   }
 ];
