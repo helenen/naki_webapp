@@ -1,10 +1,3 @@
 <div class="container" *ngFor="let chapter of chaptersByLesson">
-      <div class='chapterTitle'>{{chapter.title}}</div>
-
-      <div class=" pou " *ngFor="let text of textsByChapter">
-            <div>{{text.text}}</div>
-            <div>{{text.exemple}}</div>
-      </div>
-
-
+      <Button class='chapterTitle' [routerLink]="['/level',levelId, 'grammaire', 'lesson', lessonId, 'cours', chapter.id]">{{chapter.title}}</Button>
 </div>

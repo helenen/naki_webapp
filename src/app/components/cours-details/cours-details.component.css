@@ -1,0 +1,10 @@
+@import "~@angular/material/prebuilt-themes/indigo-pink.css";
+.container {
+  height: 120vh;
+}
+.exemple {
+  margin-top: 10vh;
+}
+.button {
+  margin-top: 5vh;
+}

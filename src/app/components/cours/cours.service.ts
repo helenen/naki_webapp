@@ -13,7 +13,6 @@ import { Observable } from "rxjs";
 @Injectable()
 export class CoursService {
   lessonId: number;
-  chapterId: number;
 
   constructor(
     private generateURLService: GenerateURLService,
@@ -29,12 +28,6 @@ export class CoursService {
   getChapters() {
     return this.generateURLService
       .get("/chapters")
-      .map((res: Response) => res.json());
-  }
-
-  getTextsByChapter(chapterId: number): Observable<Chapter> {
-    return this.generateURLService
-      .get(`chapter/${chapterId}/texts`)
       .map((res: Response) => res.json());
   }
 

@@ -15,19 +15,18 @@ import "rxjs/add/operator/mergeMap";
 })
 export class CoursComponent implements OnInit {
   chaptersByLesson: Lesson[] = [];
-  //textsByChapter: Chapter;
   lessonId: number;
-  chapterId: number;
-  mapChaptersByLesson: number;
+  levelId: number;
 
   constructor(
     private coursService: CoursService,
-    private route: ActivatedRoute,
-    private levelService: LevelService,
-    private lessonService: LessonService
+    private route: ActivatedRoute
   ) {}
 
   ngOnInit() {
+    this.levelId = +this.route.snapshot.params.levelId;
+    this.lessonId = +this.route.snapshot.params.lessonId;
+
     // met lesson.id dans la méthode coursByLesson
     this.route.params
       .map(params => params["lessonId"])
@@ -36,13 +35,5 @@ export class CoursComponent implements OnInit {
         this.chaptersByLesson = chaptersByLesson;
         console.log(this.chaptersByLesson, "chapitres par lesson dans cours");
       });
-
-    // this.mapChaptersByLesson = this.chaptersByLesson.filter(chapter => {
-    //   return this.chapterId === chapter.id;
-    // });
-
-    // this.chaptersByLesson.forEach(chapter => {
-    //   this.chapterId = chapter.id;
-    // });
   }
 }

@@ -11,6 +11,8 @@ import { RouterModule, Route } from "@angular/router";
 import { NgbModule } from "@ng-bootstrap/ng-bootstrap";
 import { HttpClientModule } from "@angular/common/http";
 import { HttpModule } from "@angular/http";
+import { CoursDetailsService } from "./components/cours-details/cours-details.service";
+import { CoursDetailsComponent } from "./components/cours-details/cours-details.component";
 
 import { AppComponent } from "./app.component";
 import { LevelComponent } from "./components/level/level.component";
@@ -33,9 +35,15 @@ const Routes: Route[] = [
   {
     path: "level/:levelId/:themeName/lesson/:lessonId/cours",
     component: CoursComponent
+  },
+  {
+    path: "level/:levelId/:themeName/lesson/:lessonId/cours/:coursId",
+    component: CoursDetailsComponent
+  },
+  {
+    path: "level/:levelId/:themeName/lesson/:lessonId/cours/:coursId/exercise",
+    component: ExerciseComponent
   }
-
-  //{ path: "exercise", component: ExerciseComponent }
 ];
 @NgModule({
   declarations: [
@@ -45,7 +53,8 @@ const Routes: Route[] = [
     ThemeComponent,
     LessonComponent,
     ExerciseComponent,
-    CoursComponent
+    CoursComponent,
+    CoursDetailsComponent
   ],
   imports: [
     BrowserModule,
@@ -66,7 +75,8 @@ const Routes: Route[] = [
     LessonService,
     GenerateURLService,
     ExerciseService,
-    CoursService
+    CoursService,
+    CoursDetailsService
   ],
   bootstrap: [AppComponent]
 })
