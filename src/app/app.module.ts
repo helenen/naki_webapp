@@ -74,9 +74,9 @@ const Routes: Route[] = [
     LevelService,
     LessonService,
     GenerateURLService,
-    ExerciseService,
     CoursService,
-    CoursDetailsService
+    CoursDetailsService,
+    ExerciseService
   ],
   bootstrap: [AppComponent]
 })

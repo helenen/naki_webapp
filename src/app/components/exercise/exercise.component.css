@@ -1,0 +1,20 @@
+@import "~@angular/material/prebuilt-themes/indigo-pink.css";
+
+.container {
+  display: flex;
+  height: 100vh;
+  align-items: center;
+  flex-direction: column;
+}
+.mat-icon {
+  height: 9vh;
+  width: auto;
+  margin-bottom: 20vh;
+  margin-top: 20vh;
+}
+.md-36 {
+  font-size: 76px;
+}
+.button {
+  width: 50vw;
+}
