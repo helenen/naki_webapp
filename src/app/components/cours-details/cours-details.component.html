@@ -1,0 +1,8 @@
+<div class="container">
+  <div class="textByChapter" *ngFor="let text of textByChapter ">
+    <h2>Chapitre </h2>{{text.text}}
+    <div class="exemple">
+      <h2>Exemple</h2>{{text.exemple}}
+    </div>
+    <button class="button" mat-raised-button color="primary" [routerLink]="['/level',levelId, 'grammaire', 'lesson', lessonId, 'cours', coursId, 'exercise']">exercice</button>
+  </div>

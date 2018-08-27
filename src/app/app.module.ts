@@ -1,3 +1,4 @@
+import { CoursService } from "./components/cours/cours.service";
 import { CoursComponent } from "./components/cours/cours.component";
 import { ExerciseComponent } from "./components/exercise/exercise.component";
 import { ExerciseService } from "./components/exercise/exercise.service";
@@ -10,6 +11,8 @@ import { RouterModule, Route } from "@angular/router";
 import { NgbModule } from "@ng-bootstrap/ng-bootstrap";
 import { HttpClientModule } from "@angular/common/http";
 import { HttpModule } from "@angular/http";
+import { CoursDetailsService } from "./components/cours-details/cours-details.service";
+import { CoursDetailsComponent } from "./components/cours-details/cours-details.component";
 
 import { AppComponent } from "./app.component";
 import { LevelComponent } from "./components/level/level.component";
@@ -17,24 +20,30 @@ import { MenuComponent } from "./components/menu/menu.component";
 import { ThemeComponent } from "./components/theme/theme.component";
 import { LessonComponent } from "./components/lesson/lesson.component";
 
-import {GenerateURLService} from "./general_service/generateUrl.service";
+import { GenerateURLService } from "./general_service/generateUrl.service";
 import { MaterialModule } from "./material/material.module";
 import { LayoutModule } from "@angular/cdk/layout";
 import { BrowserAnimationsModule } from "@angular/platform-browser/animations";
 import { FlexLayoutModule } from "@angular/flex-layout";
-import {MatListModule} from "@angular/material/list";
+import { MatListModule } from "@angular/material/list";
 import { WebStorageModule } from "ngx-store";
-import { CoursService } from "./components/cours/cours.service";
-
-
-
 
 const Routes: Route[] = [
   { path: "", component: LevelComponent },
   { path: "level/:id", component: ThemeComponent },
   { path: "level/:id/:themeName/lessons", component: LessonComponent },
-  { path: "level/:levelId/:themeName/lesson/:lessonId/cours", component: CoursComponent}
-
+  {
+    path: "level/:levelId/:themeName/lesson/:lessonId/cours",
+    component: CoursComponent
+  },
+  {
+    path: "level/:levelId/:themeName/lesson/:lessonId/cours/:coursId",
+    component: CoursDetailsComponent
+  },
+  {
+    path: "level/:levelId/:themeName/lesson/:lessonId/cours/:coursId/exercise",
+    component: ExerciseComponent
+  }
 ];
 @NgModule({
   declarations: [
@@ -44,7 +53,8 @@ const Routes: Route[] = [
     ThemeComponent,
     LessonComponent,
     ExerciseComponent,
-    CoursComponent
+    CoursComponent,
+    CoursDetailsComponent
   ],
   imports: [
     BrowserModule,
@@ -59,7 +69,15 @@ const Routes: Route[] = [
     MatListModule,
     WebStorageModule
   ],
-  providers: [ThemeService, LevelService, LessonService, GenerateURLService, ExerciseService, CoursService],
+  providers: [
+    ThemeService,
+    LevelService,
+    LessonService,
+    GenerateURLService,
+    ExerciseService,
+    CoursService,
+    CoursDetailsService
+  ],
   bootstrap: [AppComponent]
 })
 export class AppModule {}
