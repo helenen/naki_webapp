@@ -1,7 +1,8 @@
-<div class="container">
-  <mat-icon #audio class="md-36">volume_up</mat-icon>
-  <audio #audio></audio>
-  <button class="button" mat-raised-button color="primary" size="medium">la transcription</button>
+<div class="container" *ngFor="let asset of assetsByExercise ">
+  <mat-icon #audio class="md-36">volume_up </mat-icon>
+  <div></div>
+  <audio [src]="asset.value"></audio>
+  <button class="button" mat-raised-button color="primary" size="medium">Voir la transcription</button>
 </div>
 
 
