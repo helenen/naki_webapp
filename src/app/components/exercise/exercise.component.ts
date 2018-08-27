@@ -1,6 +1,7 @@
 import { Component, OnInit } from "@angular/core";
 import { ExerciseService } from "./exercise.service";
 import { Asset } from "../../models/asset";
+import { ActivatedRoute } from "@angular/router";
 
 @Component({
   selector: "app-exercise",
@@ -10,12 +11,15 @@ import { Asset } from "../../models/asset";
 export class ExerciseComponent implements OnInit {
   assets: Asset;
   audio: any;
-  constructor(private exerciseService: ExerciseService) {}
+  exerciseId: number;
+
+  constructor(
+    private exerciseService: ExerciseService,
+    private route: ActivatedRoute
+  ) {}
 
   ngOnInit() {
-    this.exerciseService.getAssets().subscribe((asset: Asset) => {
-      this.assets = asset;
-    });
+    this.exerciseId = +this.route.snapshot.params.exerciseId;
     this.audio = new Audio();
     this.audio.src = this.audio.play();
   }
