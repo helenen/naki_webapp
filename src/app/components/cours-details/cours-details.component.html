@@ -5,6 +5,7 @@
       <h2>Exemple</h2>{{text.exemple}}
     </div>
     <div *ngFor="let exercise of exerciseByChapter">
-      <button class="button" mat-raised-button color="primary" [routerLink]="['/level',levelId, 'grammaire', 'lesson', lessonId, 'cours', coursId, 'exercise', exercise.id]">exercice</button>
+      <button class="button" mat-raised-button color="primary" [routerLink]="['/level',levelId, 'grammaire', 'lesson', lessonId, 'cours', coursId, 'exercise', exercise.id]">exercice
+        </button>
     </div>
   </div>
