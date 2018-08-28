@@ -19,6 +19,7 @@ import { LevelComponent } from "./components/level/level.component";
 import { MenuComponent } from "./components/menu/menu.component";
 import { ThemeComponent } from "./components/theme/theme.component";
 import { LessonComponent } from "./components/lesson/lesson.component";
+import { ExerciseDetailsComponent } from "./components/exercise-details/exercise-details.component";
 
 import { GenerateURLService } from "./general_service/generateUrl.service";
 import { MaterialModule } from "./material/material.module";
@@ -44,6 +45,11 @@ const Routes: Route[] = [
     path:
       "level/:levelId/:themeName/lesson/:lessonId/cours/:coursId/exercise/:exerciseId",
     component: ExerciseComponent
+  },
+  {
+    path:
+      "level/:levelId/:themeName/lesson/:lessonId/cours/:coursId/exercise/:exerciseId/details",
+    component: ExerciseDetailsComponent
   }
 ];
 @NgModule({
@@ -55,7 +61,8 @@ const Routes: Route[] = [
     LessonComponent,
     ExerciseComponent,
     CoursComponent,
-    CoursDetailsComponent
+    CoursDetailsComponent,
+    ExerciseDetailsComponent
   ],
   imports: [
     BrowserModule,
