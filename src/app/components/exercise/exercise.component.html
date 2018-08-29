@@ -1,13 +1,22 @@
-<div class="container">
-  <mat-icon #audio class="md-36">volume_up</mat-icon>
-  <audio #audio></audio>
-  <button class="button" mat-raised-button color="primary" size="medium">la transcription</button>
+<div class="container" *ngIf="assetSound">
+  <mat-icon (click)="audio.play()" class="md-36">volume_up </mat-icon>
+  <div></div>
+  <audio #audio autoplay>
+    <source [src]="assetSound.value " type="audio/mpeg ">
+  </audio>
+  <div class="ImgTranscription" *ngIf="assetImageVisible">
+    <img [src]="assetImage.value" />
+    <p class="transcription">{{assetTranscription.transcription}}</p>
+  </div>
+  <button class=" mat-raised-button " color="primary " size="medium " *ngIf="buttonVisible " (click)="switchImage() ">
+    Voir la transcription
+  </button>
 </div>
 
 
 
 
 
-<!-- <p *ngFor="let asset of assets">
+<!-- <p *ngFor="let asset of assets ">
   {{asset.value}}
 </p> -->

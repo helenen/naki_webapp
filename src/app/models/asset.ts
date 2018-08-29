@@ -1,6 +1,7 @@
 export class Asset {
-    id: number;
-    type: string;
-    value: string;
-    asset_order: number;
-  }
+  id: number;
+  type: string;
+  value: string;
+  asset_order: number;
+  transcription: any;
+}

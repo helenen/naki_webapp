@@ -22,7 +22,7 @@ export class ExerciseService {
       .map((res: Response) => res.json());
   }
 
-  getAssetsByExercise(exerciseId: number): Observable<Exercise> {
+  getAssetsByExercise(exerciseId: number): Observable<Asset[]> {
     return this.generateURLService
       .get(`exercise/${exerciseId}/assets`)
       .map((res: Response) => res.json());

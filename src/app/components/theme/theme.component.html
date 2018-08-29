@@ -1,5 +1,5 @@
 <div class="container" fxLayout="column" fxLayoutAlign="space-between center">
-  <div *ngFor=" let theme of themes" >
-    <button mat-raised-button color="primary" size="medium" class="topic_items" [routerLink]="['/level', levelId, theme.name,'lessons']">{{theme.name}}</button>
+  <div *ngFor=" let theme of themes">
+    <button mat-raised-button color="primary" size="medium" class="topic_items col " [routerLink]="['/level', levelId, theme.name,'lessons']">{{theme.name}}</button>
   </div>
 </div>
