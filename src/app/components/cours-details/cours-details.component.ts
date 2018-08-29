@@ -1,12 +1,12 @@
-import { Chapter } from "./../../models/chapter";
-import { CoursDetailsService } from "./cours-details.service";
-import { Component, OnInit } from "@angular/core";
-import { ActivatedRoute } from "@angular/router";
+import { Chapter } from './../../models/chapter';
+import { CoursDetailsService } from './cours-details.service';
+import { Component, OnInit } from '@angular/core';
+import { ActivatedRoute } from '@angular/router';
 
 @Component({
-  selector: "app-cours-details",
-  templateUrl: "./cours-details.component.html",
-  styleUrls: ["./cours-details.component.css"]
+  selector: 'app-cours-details',
+  templateUrl: './cours-details.component.html',
+  styleUrls: ['./cours-details.component.css']
 })
 export class CoursDetailsComponent implements OnInit {
   coursId: number;
@@ -25,21 +25,21 @@ export class CoursDetailsComponent implements OnInit {
     this.levelId = +this.route.snapshot.params.levelId;
 
     this.route.params
-      .map(params => params["id"])
+      .map(params => params['id'])
       .mergeMap(id => this.coursDetailsService.getTextsByChapter(this.coursId))
       .subscribe(textByChapter => {
         this.textByChapter = textByChapter;
-        console.log(this.textByChapter, "texts par cours");
+        console.log(this.textByChapter, 'texts par cours');
       });
 
     this.route.params
-      .map(params => params["id"])
+      .map(params => params['id'])
       .mergeMap(id =>
         this.coursDetailsService.getExercisesByChapter(this.coursId)
       )
       .subscribe(exerciseByChapter => {
         this.exerciseByChapter = exerciseByChapter;
-        console.log(this.exerciseByChapter, "exercise par cours");
+        console.log(this.exerciseByChapter, 'exercise par cours');
       });
   }
 }

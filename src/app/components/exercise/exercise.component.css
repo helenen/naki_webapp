@@ -1,20 +1,30 @@
-@import "~@angular/material/prebuilt-themes/indigo-pink.css";
+@import '~@angular/material/prebuilt-themes/indigo-pink.css';
 
 .container {
   display: flex;
-  height: 100vh;
+  height: 120vh;
   align-items: center;
   flex-direction: column;
 }
 .mat-icon {
   height: 9vh;
   width: auto;
-  margin-bottom: 20vh;
-  margin-top: 20vh;
+  margin-bottom: 15vh;
+  margin-top: 10vh;
 }
 .md-36 {
   font-size: 76px;
 }
 .button {
   width: 50vw;
+}
+.transcription {
+  display: flex;
+  width: 20vw;
+  margin: 0 10px 0 100px;
+}
+.ImgTranscription {
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
 }

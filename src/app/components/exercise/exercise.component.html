@@ -1,11 +1,14 @@
-<div class="container" *ngFor="let asset of assetsByExercise ">
+<div class="container" *ngIf="assetSound">
   <mat-icon (click)="audio.play()" class="md-36">volume_up </mat-icon>
   <div></div>
   <audio #audio autoplay>
-    <source [src]="asset.value " type="audio/mpeg ">
+    <source [src]="assetSound.value " type="audio/mpeg ">
   </audio>
-  <button class=" mat-raised-button " color="primary " size="medium " *ngIf="buttonVisible " [routerLink]="[ '/level',levelId,
-    'grammaire', 'lesson', lessonId, 'cours', coursId, 'exercise', exerciseId, 'details'] ">
+  <div class="ImgTranscription" *ngIf="assetImageVisible">
+    <img [src]="assetImage.value" />
+    <p class="transcription">{{assetTranscription.transcription}}</p>
+  </div>
+  <button class=" mat-raised-button " color="primary " size="medium " *ngIf="buttonVisible " (click)="switchImage() ">
     Voir la transcription
   </button>
 </div>
