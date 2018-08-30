@@ -29,7 +29,6 @@ import { LayoutModule } from '@angular/cdk/layout';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { FlexLayoutModule } from '@angular/flex-layout';
 import { MatListModule } from '@angular/material/list';
-import { WebStorageModule } from 'ngx-store';
 
 const Routes: Route[] = [
   { path: '', component: LevelComponent },
@@ -73,8 +72,7 @@ const Routes: Route[] = [
     LayoutModule,
     BrowserAnimationsModule,
     FlexLayoutModule,
-    MatListModule,
-    WebStorageModule
+    MatListModule
   ],
   providers: [
     ThemeService,

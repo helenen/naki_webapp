@@ -1,9 +1,9 @@
 @import '~@angular/material/prebuilt-themes/indigo-pink.css';
-.container{
+.container {
   height: 10vh;
   margin-top: 8rem;
 }
-.mat-raised-button{
+.mat-raised-button {
   height: 9vh;
   width: 9rem;
 }
@@ -14,7 +14,12 @@
   height: 40vh;
   justify-content: space-between;
 }
-.mat-raised-button{
+.mat-raised-button {
   height: 10vh;
   width: 9rem;
+}
+@media screen and (min-width: 1280px) {
+  .mat-raised-button {
+    width: 40vw;
+  }
 }

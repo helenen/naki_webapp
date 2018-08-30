@@ -11,3 +11,8 @@
 .title {
   display: flex;
 }
+@media screen and (min-width: 1280px) {
+  .container {
+    margin-top: 10vh;
+  }
+}

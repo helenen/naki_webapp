@@ -5,7 +5,12 @@
   height: 40vh;
   justify-content: space-between;
 }
-.mat-raised-button{
+.mat-raised-button {
   height: 10vh;
   width: 9rem;
+}
+@media screen and (min-width: 1280px) {
+  .mat-raised-button {
+    width: 40vw;
+  }
 }

@@ -1,9 +1,27 @@
-.container{
-    padding: 0;
+.container {
+  padding: 0;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
 }
-.chapterTitle{
-    height: 10vh;
-    width: 100%;
-    background-color: #FF9F94;
-    font-size: 1.2rem;
+.chapterTitle {
+  height: 10vh;
+  width: 100%;
+  background-color: #ff9f94;
+  font-size: 1.2rem;
+}
+@media screen and (min-width: 1280px) {
+  .container {
+    margin-top: 10vh;
+  }
+  .chapterTitle {
+    width: 40vw;
+  }
+  .container-sub {
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    width: 50%;
+  }
 }
