@@ -5,37 +5,42 @@
   justify-content: center;
   margin-top: 10%;
 }
-.mat-list .mat-list-item-content{
-  display:flex;
+.mat-list .mat-list-item-content {
+  display: flex;
   align-items: flex-start !important;
 }
-.container{
+.container {
   padding-top: 2.6rem;
   width: 100%;
 }
-.example-card .mat-card{
+.example-card .mat-card {
   max-width: 400px;
 }
-.mat-card-title{
+.mat-card-title {
   width: 15rem;
-
-
 }
-.row{
+.row {
   height: 8vh;
   margin-left: 0.8rem;
   padding-top: 0.4rem;
   width: 18rem;
 }
-.mat-icon{
+.mat-icon {
   margin-top: -0.5rem;
 }
 
-.mat-card{
+.mat-card {
   height: 18vh;
   width: 19rem;
   margin-bottom: 1.3rem;
   padding-top: 0.8rem;
-  
-  
+}
+
+@media screen and (min-width: 1280px) {
+  .container {
+    margin-top: 10vh;
+  }
+  .mat-card {
+    width: 40vw;
+  }
 }
