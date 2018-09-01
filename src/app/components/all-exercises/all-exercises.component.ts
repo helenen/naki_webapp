@@ -24,7 +24,6 @@ export class AllExercisesComponent implements OnInit {
     this.coursId = +this.route.snapshot.params.coursId;
     this.lessonId = +this.route.snapshot.params.lessonId;
     this.levelId = +this.route.snapshot.params.levelId;
-    this.coursId = +this.route.snapshot.params.coursId;
 
     this.allExercisesService
       .getExercises()

@@ -13,6 +13,7 @@
 }
 @media screen and (min-width: 1280px) {
   .container {
-    margin-top: 10vh;
+    margin-top: 15vh;
+    font-size: 2vw;
   }
 }

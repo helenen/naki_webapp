@@ -21,10 +21,16 @@
 .transcription {
   display: flex;
   width: 20vw;
-  margin: 0 10px 0 100px;
+  margin: 0 10px 0 120px;
 }
 .ImgTranscription {
   display: flex;
   justify-content: center;
   flex-direction: column;
+}
+
+@media screen and (min-width: 1280px) {
+  .transcription {
+    margin: 0 10px 0 200px;
+  }
 }

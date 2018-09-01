@@ -37,21 +37,21 @@ const Routes: Route[] = [
   { path: 'level/:id', component: ThemeComponent },
   { path: 'level/:id/:themeName/lessons', component: LessonComponent },
   {
-    path: 'level/:levelId/:themeName/lesson/:lessonId/cours',
+    path: 'level/:levelId/:themeName/lesson/:lessonId/chapitre',
     component: CoursComponent
   },
   {
-    path: 'level/:levelId/:themeName/lesson/:lessonId/cours/:coursId',
+    path: 'level/:levelId/:themeName/lesson/:lessonId/chapitre/:coursId',
     component: CoursDetailsComponent
   },
   {
     path:
-      'level/:levelId/:themeName/lesson/:lessonId/cours/:coursId/exercise/:exerciseId',
+      'level/:levelId/:themeName/lesson/:lessonId/chapitre/:coursId/exercise/:exerciseId',
     component: ExerciseComponent
   },
   { path: 'allLessons', component: AllLessonsComponent },
   {
-    path: 'level/:levelId/:themeName/lesson/:lessonId/cours',
+    path: 'level/:levelId/:themeName/lesson/:lessonId/chapitre',
     component: LessonComponent
   },
   { path: 'allExercises', component: AllExercisesComponent }

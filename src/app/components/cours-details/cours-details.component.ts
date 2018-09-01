@@ -2,6 +2,7 @@ import { Chapter } from './../../models/chapter';
 import { CoursDetailsService } from './cours-details.service';
 import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
+import { Lesson } from '../../models/lesson';
 
 @Component({
   selector: 'app-cours-details',
