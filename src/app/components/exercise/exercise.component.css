@@ -20,8 +20,9 @@
 }
 .transcription {
   display: flex;
-  width: 20vw;
+  width: 25vw;
   margin: 0 10px 0 120px;
+  font-size: 6vw;
 }
 .ImgTranscription {
   display: flex;
@@ -31,6 +32,19 @@
 
 @media screen and (min-width: 1280px) {
   .transcription {
-    margin: 0 10px 0 200px;
+    margin: 0 10px 0 105px;
+    font-size: 3vw;
+  }
+  .ImgTranscription {
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    width: 25vw;
+  }
+  .mat-icon {
+    height: 9vh;
+    width: auto;
+    margin-bottom: 9vh;
+    margin-top: 10vh;
   }
 }
