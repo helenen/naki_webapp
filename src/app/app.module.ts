@@ -1,3 +1,4 @@
+import { AllLessonsComponent } from './components/all-lessons/all-lessons.component';
 import { Component } from '@angular/core';
 import { CoursService } from './components/cours/cours.service';
 import { CoursComponent } from './components/cours/cours.component';
@@ -15,6 +16,7 @@ import { HttpModule } from '@angular/http';
 import { CoursDetailsService } from './components/cours-details/cours-details.service';
 import { CoursDetailsComponent } from './components/cours-details/cours-details.component';
 import { AllExercisesService } from './components/all-exercises/all-exercises.service';
+import { AllLessonservice } from './components/all-lessons/all-lessons.service';
 
 import { AppComponent } from './app.component';
 import { LevelComponent } from './components/level/level.component';
@@ -47,7 +49,11 @@ const Routes: Route[] = [
       'level/:levelId/:themeName/lesson/:lessonId/cours/:coursId/exercise/:exerciseId',
     component: ExerciseComponent
   },
-  { path: 'themes', component: ThemeComponent },
+  { path: 'allLessons', component: AllLessonsComponent },
+  {
+    path: 'level/:levelId/:themeName/lesson/:lessonId/cours',
+    component: LessonComponent
+  },
   { path: 'allExercises', component: AllExercisesComponent }
 ];
 @NgModule({
@@ -60,7 +66,8 @@ const Routes: Route[] = [
     ExerciseComponent,
     CoursComponent,
     CoursDetailsComponent,
-    AllExercisesComponent
+    AllExercisesComponent,
+    AllLessonsComponent
   ],
   imports: [
     BrowserModule,
@@ -82,7 +89,8 @@ const Routes: Route[] = [
     CoursService,
     CoursDetailsService,
     ExerciseService,
-    AllExercisesService
+    AllExercisesService,
+    AllLessonservice
   ],
   bootstrap: [AppComponent]
 })
