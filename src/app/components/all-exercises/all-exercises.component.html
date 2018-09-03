@@ -1,5 +1,5 @@
 <div class="container" *ngFor="let exercise of exercises">
-  <button class='exerciseTitle col-sm' mat-raised-button color="primary" [routerLink]="['/level',levelId, 'grammaire', 'lesson', lessonId, 'cours', coursId, 'exercise', exercise.id]">exercice
+  <button class='exerciseTitle ' mat-raised-button color="primary" [routerLink]="['/level',levelId, 'grammaire', 'lesson', lessonId, 'chapitre', coursId, 'exercise', exercise.id]">exercice
     {{exercise.id}}
   </button>
 </div>

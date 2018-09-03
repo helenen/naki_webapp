@@ -37,4 +37,7 @@
     height: 5vh;
     margin-bottom: 10vh;
   }
+  .mat-toolbar-row {
+    justify-content: flex-end;
+  }
 }

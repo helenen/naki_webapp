@@ -1,5 +1,5 @@
 <div class="container">
       <section class="container-sub">
-            <Button *ngFor="let chapter of chaptersByLesson" class='chapterTitle' [routerLink]="['/level',levelId, 'grammaire', 'lesson', lessonId, 'cours', chapter.id]">{{chapter.title}}</Button>
+            <Button *ngFor="let chapter of chaptersByLesson" class='chapterTitle' [routerLink]="['/level',levelId, 'grammaire', 'lesson', lessonId, 'chapitre', chapter.id]">{{chapter.title}}</Button>
       </section>
 </div>
