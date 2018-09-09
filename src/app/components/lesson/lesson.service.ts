@@ -12,19 +12,12 @@ import { Observable } from 'rxjs';
 
 @Injectable()
 export class LessonService {
-  private apiUrl = environment.api_Url;
   levelId: number;
 
   lessonByLevel: number;
   chapterId: number;
 
   constructor(private generateURLService: GenerateURLService) {}
-
-  /**
-   * Makes an HTTP GET call to retrieve a specific oldProjecct using its ID
-   * @param id of the project requested
-   * @returns {Observable<Lesson>} the project requested
-   */
 
   getLessons(): Observable<Lesson> {
     return this.generateURLService

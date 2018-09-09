@@ -17,16 +17,11 @@ import { Level } from '../../models/level';
 })
 export class LessonComponent implements OnInit {
   levelId: number;
-  themes: Theme[];
   lessonsByLevel: Level;
-  chapterId: Chapter;
-  // @LocalStorage()lessons: Lesson;
 
   constructor(
     private lessonService: LessonService,
-    private route: ActivatedRoute,
-    private levelService: LevelService,
-    private themeService: ThemeService
+    private route: ActivatedRoute
   ) {}
   ngOnInit() {
     this.levelId = +this.route.snapshot.params.id;
