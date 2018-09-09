@@ -17,6 +17,7 @@ import { CoursDetailsService } from './components/cours-details/cours-details.se
 import { CoursDetailsComponent } from './components/cours-details/cours-details.component';
 import { AllExercisesService } from './components/all-exercises/all-exercises.service';
 import { AllLessonservice } from './components/all-lessons/all-lessons.service';
+import { HeaderComponent } from './components/header/header.component';
 
 import { AppComponent } from './app.component';
 import { LevelComponent } from './components/level/level.component';
@@ -67,7 +68,8 @@ const Routes: Route[] = [
     CoursComponent,
     CoursDetailsComponent,
     AllExercisesComponent,
-    AllLessonsComponent
+    AllLessonsComponent,
+    HeaderComponent
   ],
   imports: [
     BrowserModule,

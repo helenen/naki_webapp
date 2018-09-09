@@ -3,7 +3,7 @@
     <div class="title">
     </div>
     {{text.text}}
-    <div class="exemple">
+    <div *ngIf='text.exemple' class="exemple">
       <h2>Exemple</h2>{{text.exemple}}
     </div>
     <div *ngFor="let exercise of exerciseByChapter">
