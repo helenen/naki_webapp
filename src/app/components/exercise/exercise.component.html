@@ -5,7 +5,7 @@
     <source [src]="assetSound.value " type="audio/mpeg ">
   </audio>
   <div class="ImgTranscription" *ngIf="assetImageVisible">
-    <img [src]="assetImage.value" />
+    <img class='img' [src]="assetImage.value" />
     <p class="transcription">{{assetTranscription.transcription}}</p>
   </div>
   <button class=" mat-raised-button " color="primary " size="medium " *ngIf="buttonVisible " (click)="switchImage() ">

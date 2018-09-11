@@ -19,22 +19,28 @@
 }
 .transcription {
   display: flex;
-  width: 25vw;
-  margin: 0 10px 0 120px;
-  font-size: 6vw;
+  width: 100%;
+  font-size: 5vw;
+  justify-content: center;
 }
 .ImgTranscription {
   display: flex;
   justify-content: center;
   flex-direction: column;
 }
+.img {
+  height: 32vh;
+  width: auto;
+}
 .bouton-retour {
-  margin: 10vh 15vh 0 2vh;
+  margin: 6vh 15vh 0 2vh;
 }
 @media screen and (min-width: 1280px) {
   .transcription {
-    margin: 0 10px 0 105px;
+    display: flex;
+    width: 100%;
     font-size: 3vw;
+    justify-content: center;
   }
   .ImgTranscription {
     display: flex;
@@ -47,5 +53,9 @@
     width: auto;
     margin-bottom: 9vh;
     margin-top: 10vh;
+  }
+  .img {
+    height: 34.9vh;
+    width: auto;
   }
 }
